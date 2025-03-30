@@ -1,0 +1,1106 @@
+// Color Variables
+$primary-color: #dd6800;
+$secondary-color: #e67e22;
+$tertiary-color: #ffdfc3;
+$primary-dark-color: #333333;
+$secondary-dark-color: #777777;
+$white-color: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: 1199px) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: 990px) {
+    font-size: 45%;
+  }
+
+  @media only screen and (max-width: 780px) {
+    font-size: 40%;
+  }
+
+  @media only screen and (max-width: 680px) {
+    font-size: 36%;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+// Custom Design Classes
+
+.p-hl {
+  color: $secondary-color;
+}
+
+.s-ul {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.fa-play {
+  color: $secondary-color;
+}
+
+.btn {
+  border: none;
+  padding: 1.2rem 1.8rem;
+  font-size: 1.8rem;
+  border-radius: 100px;
+  color: $white-color;
+  font-weight: bold;
+}
+
+.flex-gap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.card-design {
+  border: 2px solid $primary-color;
+  border-radius: 1.2rem;
+  padding: 4.5rem 2.5rem;
+}
+
+///////////////////////// Navigation //////////////////////////
+
+.logo-name {
+  font-size: 2.4rem;
+
+  a {
+    text-decoration: none;
+    color: $primary-dark-color;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+
+  background-color: $tertiary-color;
+
+  &__bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    &-items {
+      list-style: none;
+    }
+
+    &-link {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: $primary-dark-color;
+      transition: all 0.2s ease;
+      font-weight: 600;
+
+      &:hover,
+      &:active {
+        color: $primary-color;
+      }
+    }
+
+    &-btn {
+      background-color: $secondary-color;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+//////////////////////////// Header /////////////////////////////
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  @media only screen and (max-width: 680px) {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5rem;
+    padding: 2.5rem;
+
+    line-height: 1.5;
+    padding-left: 6.4rem;
+
+    &-heading {
+      display: inline-block;
+      font-size: 4.2rem;
+      font-weight: 500;
+      color: $primary-dark-color;
+      padding-right: 16rem;
+
+      @media only screen and (max-width: 680px) {
+        padding: 2rem;
+      }
+    }
+
+    &-subheading {
+      display: inline-block;
+      margin: 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 400;
+      color: $secondary-color;
+      border: 2px solid $secondary-dark-color;
+      padding: 1rem 2rem;
+      border-radius: 1.5rem;
+    }
+
+    &-paragraph {
+      display: inline-block;
+      font-size: 1.8rem;
+      color: $secondary-dark-color;
+      line-height: 1.6;
+    }
+
+    @media only screen and (max-width: 680px) {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1;
+
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding-left: 0;
+    }
+  }
+
+  &__buttons {
+    padding-top: 2rem;
+    display: flex;
+    gap: 2.5rem;
+    transition: all 0.2s ease-in-out;
+
+    &-action {
+      background-color: $primary-dark-color;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+
+    &-video {
+      font-weight: 400;
+      border: 2px solid $primary-dark-color;
+      color: $secondary-dark-color;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        border: 2px solid $secondary-color;
+      }
+    }
+  }
+
+  &__review {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+
+    &-imgs {
+      width: 4.5rem;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid $tertiary-color;
+      margin-right: -1rem;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-left: 4.8rem;
+
+      font-size: 1.5rem;
+      color: $secondary-dark-color;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    &-img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media only screen and (max-width: 680px) {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+//////////////////////////// Section - INFO /////////////////////////////
+
+.section__info {
+  margin: 3.2rem 0;
+  &-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 6.4rem;
+    margin-bottom: 2.5rem;
+
+    &-heading {
+      font-size: 4.2rem;
+      font-weight: 400;
+      color: $primary-dark-color;
+    }
+
+    &-paragraph {
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: $secondary-dark-color;
+    }
+  }
+
+  .info-overview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    text-align: center;
+
+    &__card {
+      padding: 3.2rem 2.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      transition: all 0.3s ease-in-out;
+
+      &-title {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: $primary-dark-color;
+      }
+
+      &-details {
+        font-size: 2rem;
+        font-weight: 300;
+      }
+
+      &-btn {
+        font-size: 1.6rem;
+        background-color: $primary-dark-color;
+        border-radius: 0.5rem;
+        padding: 1.2rem 2.5rem;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+          background-color: $primary-color;
+        }
+      }
+
+      &-icon {
+        background-color: $tertiary-color;
+        padding: 2.5rem;
+        border-radius: 100%;
+        font-size: 5rem;
+        color: $secondary-color;
+      }
+
+      &:hover {
+        border-radius: 2rem;
+        box-shadow: 1rem 2rem 5rem rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .feature {
+    display: grid;
+    grid-template-columns: 40vw repeat(5, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    padding: 3.2rem 6.4rem;
+    align-items: center;
+
+    &__text {
+      display: inline-block;
+      grid-column: 1 / 3;
+      grid-row: 1 / -1;
+      padding: 2rem 0;
+
+      &-heading {
+        font-size: 4.2rem;
+        color: $primary-dark-color;
+        font-weight: 500;
+      }
+
+      &-details {
+        font-size: 2rem;
+        color: $secondary-dark-color;
+      }
+    }
+
+    &__review {
+      grid-column: 5 / span 2;
+      grid-row: 1 / 2;
+      align-self: center;
+      text-align: center;
+
+      &-text {
+        color: $secondary-dark-color;
+        font-size: 2rem;
+      }
+
+      &-icon,
+      &-rating {
+        color: $secondary-color;
+        font-size: 2.4rem;
+        font-weight: 600;
+      }
+    }
+
+    &__rank {
+      grid-column: 4 / span 2;
+      grid-row: 2 / 3;
+      align-self: center;
+      text-align: center;
+    }
+
+    &__customer {
+      grid-column: 5 / span 2;
+      grid-row: 3 / 4;
+      align-self: center;
+      text-align: center;
+    }
+  }
+}
+
+//////////////////////////// Section - SERVICE /////////////////////////////
+
+.services {
+  display: grid;
+  grid-template-columns:
+    [p1-start] 10rem [p1-end] repeat(9, [col-start] 1fr [col-end])
+    [p2-start] 10rem [p2-end];
+  grid-template-rows: min-content repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  row-gap: 3.2rem;
+  column-gap: 2.5rem;
+  text-align: center;
+  margin-bottom: 4.5rem;
+
+  @media only screen and (max-width: 680px) {
+    grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+    grid-template-rows: min-content repeat(4, [row-start] fr [row-end]);
+  }
+
+  &__text {
+    grid-column: p1-start / p2-end;
+    text-align: center;
+    margin-bottom: 4.5rem;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: col-start 2 / col-end 7;
+      grid-row: row-start 1 / row-end 2;
+    }
+
+    &-small {
+      color: $primary-color;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    &-heading {
+      font-size: 3.2rem;
+      font-weight: 600;
+    }
+
+    &-paragraph {
+      font-size: 1.8rem;
+      color: $secondary-dark-color;
+    }
+  }
+
+  &__card-1 {
+    grid-column: col-start 1 / col-end 3;
+    grid-row: 2 / 3;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: col-start 2 / col-end 4;
+      grid-row: row-start 2 / row-end 3;
+    }
+  }
+  &__card-2 {
+    grid-column: col-start 4 / col-end 6;
+    grid-row: 2 / 3;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: col-start 5 / col-end 7;
+      grid-row: row-start 2 / row-end 3;
+    }
+  }
+  &__card-3 {
+    grid-column: col-start 7 / col-end 9;
+    grid-row: 2 / 3;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: col-start 2 / col-end 4;
+      grid-row: row-start 3 / row-end 4;
+    }
+  }
+  &__card-4 {
+    grid-column: col-start 1 / col-end 3;
+    grid-row: 3 / 4;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: col-start 5 / col-end 7;
+      grid-row: row-start 3 / row-end 4;
+    }
+  }
+  &__card-5 {
+    grid-column: col-start 4 / col-end 6;
+    grid-row: 3 / 4;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: col-start 2 / col-end 4;
+      grid-row: row-start 4 / row-end 5;
+    }
+  }
+  &__card-6 {
+    grid-column: col-start 7 / col-end 9;
+    grid-row: 3 / 4;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: col-start 5 / col-end 7;
+      grid-row: row-start 4 / row-end 5;
+    }
+  }
+
+  &__card-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+
+    &-icon {
+      background-color: $tertiary-color;
+      padding: 2.5rem;
+      border-radius: 100%;
+      font-size: 5rem;
+      color: $secondary-color;
+    }
+    &-title {
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: $primary-dark-color;
+    }
+
+    &-details {
+      color: $secondary-dark-color;
+      font-size: 1.7rem;
+      font-weight: 400;
+    }
+
+    &-btn {
+      font-size: 1.6rem;
+      background-color: $primary-dark-color;
+      border-radius: 0.5rem;
+      padding: 1.2rem 2.5rem;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+//////////////////////////// Section - SERVICE /////////////////////////////
+
+.pricing {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: min-content auto-fit;
+  column-gap: 3.2rem;
+  justify-items: end;
+
+  @media only screen and (max-width: 680px) {
+    grid-template-columns: 2rem 1fr 2rem;
+    grid-template-rows: auto-fit;
+    column-gap: 2rem;
+    row-gap: 5rem;
+    justify-items: center;
+  }
+
+  &__text {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    margin-left: 6.4rem;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    &-small {
+      color: $primary-color;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    &-heading {
+      font-size: 3.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    &-paragraph {
+      font-size: 1.8rem;
+      color: $secondary-dark-color;
+    }
+  }
+
+  &__img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    width: 45%;
+    margin-right: 6.4rem;
+    filter: brightness(75%);
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    &-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    gap: 2rem;
+
+    margin: 3.2rem 4.5rem;
+
+    @media only screen and (max-width: 680px) {
+      grid-template-columns: 2rem max-content 2rem;
+      grid-template-rows: auto-fit;
+      justify-content: center;
+      row-gap: 5rem;
+    }
+
+    &-title {
+      font-size: 2rem;
+      color: $primary-color;
+      text-align: center;
+    }
+
+    &-subtitle {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $secondary-dark-color;
+      text-align: center;
+    }
+
+    &-price {
+      font-size: 4.2rem;
+      color: $primary-color;
+    }
+
+    &-list {
+      list-style: none;
+      font-size: 1.4rem;
+      color: $secondary-dark-color;
+    }
+
+    &-icon {
+      color: $secondary-color;
+      margin-right: 1rem;
+    }
+
+    &-btn {
+      border-radius: 0.7rem;
+      color: $white-color;
+      background-color: $primary-dark-color;
+    }
+
+    &-1 {
+      @extend .card-design;
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      gap: 2.5rem;
+
+      grid-column: 2 / 5;
+      grid-row: 1 / 3;
+
+      @media only screen and (max-width: 680px) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &-2 {
+      @extend .card-design;
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      gap: 2.5rem;
+
+      grid-column: 5 / 8;
+      grid-row: 1 / 3;
+
+      @media only screen and (max-width: 680px) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &-3 {
+      @extend .card-design;
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      gap: 2.5rem;
+
+      grid-column: 8 / 11;
+      grid-row: 1 / 3;
+
+      @media only screen and (max-width: 680px) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+      }
+    }
+  }
+}
+
+//////////////////////////// Section - Testimonials /////////////////////////////
+
+.testimonial {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+
+  @media only screen and (max-width: 680px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto-fit;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 3.2rem;
+    margin-bottom: 2.5rem;
+    padding: 2rem 2.5rem;
+
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    &-small {
+      color: $primary-color;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    &-heading {
+      font-size: 3.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    &-paragraph {
+      font-size: 1.8rem;
+      color: $secondary-dark-color;
+    }
+  }
+
+  &__user {
+    padding: 2.5rem 0;
+    &-name {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 500;
+      color: $primary-dark-color;
+    }
+
+    &-rating {
+      color: $primary-color;
+      font-size: 1.8rem;
+    }
+
+    &-review {
+      font-size: 1.6rem;
+      color: $secondary-dark-color;
+      font-weight: 400;
+    }
+
+    &-img {
+      align-self: center;
+      width: 30%;
+      filter: brightness(75%);
+
+      &-photo {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__user-1 {
+    grid-column: 2 / 5;
+    grid-row: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 1 / 5;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__user-2 {
+    grid-column: 5 / 8;
+    grid-row: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 1 / 5;
+      grid-row: 3 / 4;
+    }
+  }
+
+  .google__review {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+
+    margin-bottom: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 1 / 5;
+      grid-row: 4 / 5;
+    }
+
+    &-title {
+      font-size: 3.2rem;
+      font-weight: 500;
+      color: $secondary-dark-color;
+    }
+
+    &-btn {
+      background-color: $secondary-color;
+      border-radius: 0.5rem;
+      text-transform: capitalize;
+      font-size: 2rem;
+      font-weight: 400;
+      color: $white-color;
+      transition: all 0.25s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-3px);
+        background-color: $primary-color;
+      }
+
+      &:active {
+        transform: translateY(3px);
+      }
+    }
+  }
+}
+
+//////////////////////////// Section - Footer /////////////////////////////
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+  grid-template-rows: repeat(12, [row-start] max-content [row-end]);
+  align-items: start;
+
+  @media only screen and (max-width: 680px) {
+    grid-template-columns: repeat(2, minmax(max-content, min-content));
+    grid-template-rows: repeat(7, min-content);
+    align-items: center;
+    justify-content: center;
+    row-gap: 3.2rem;
+  }
+
+  &__text {
+    grid-column: col-start 1 / col-end 12;
+    grid-row: row-start 1 / row-end 2;
+    text-align: center;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 1 / span 2;
+      grid-row: 1 / 2;
+    }
+
+    &-heading {
+      font-size: 4.2rem;
+      color: $primary-dark-color;
+      font-weight: 600;
+    }
+
+    &-paragraph {
+      font-size: 2rem;
+      color: $secondary-dark-color;
+      font-weight: 500;
+    }
+  }
+
+  &__newsletter {
+    grid-column: col-start 1 / col-end 12;
+    grid-row: row-start 3 / row-end 4;
+    text-align: center;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 1 / span 2;
+      grid-row: 2 / 3;
+    }
+
+    padding: 3.2rem 0;
+    &-box {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      border: 2px solid $secondary-dark-color;
+      color: $primary-dark-color;
+      width: 25%;
+      padding: 1.2rem 2rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      margin-right: -2rem;
+      transition: all 0.3s ease-in-out;
+
+      &:focus {
+        width: 30%;
+      }
+    }
+
+    &-btn {
+      border: none;
+      background-color: $primary-dark-color;
+      color: $white-color;
+      font-size: 1.8rem;
+      font-weight: 500;
+      padding: 1.4rem 2rem;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &__logo {
+    grid-column: col-start 3 / col-end 5;
+    grid-row: row-start 5 / 6;
+
+    @media only screen and (max-width: 680px) {
+      text-align: center;
+      grid-column: 1 / span 2;
+      grid-row: 3 / 4;
+    }
+    &-text {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: $primary-dark-color;
+    }
+  }
+
+  &__social {
+    grid-column: col-start 3 / col-end 5;
+    grid-row: row-start 6 / 7;
+
+    @media only screen and (max-width: 680px) {
+      text-align: center;
+      grid-column: 1 / span 2;
+      grid-row: 4 / 5;
+    }
+
+    &-icon {
+      font-size: 5rem;
+      color: $secondary-color;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__links {
+    grid-column: col-start 6 / col-end 8;
+    grid-row: row-start 5 / 7;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 1 / 2;
+      grid-row: 5 / 6;
+    }
+
+    &-heading {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 500;
+      color: $primary-dark-color;
+      border-bottom: 2px solid $secondary-dark-color;
+    }
+
+    &-list {
+      list-style: none;
+      &--item {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $primary-dark-color;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+          color: $secondary-color;
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  &__info {
+    grid-column: col-start 9 / col-end 10;
+    grid-row: row-start 5 / 7;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 2 / 3;
+      grid-row: 5 / 6;
+    }
+
+    &-heading {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 500;
+      color: $primary-dark-color;
+      border-bottom: 2px solid $secondary-dark-color;
+    }
+
+    &-list {
+      list-style: none;
+      &--item {
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $primary-dark-color;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    grid-column: col-start 1 / col-end 12;
+    grid-row: row-start 9 / 12;
+
+    @media only screen and (max-width: 680px) {
+      grid-column: 1 / span 2;
+      grid-row: 7 / 8;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem;
+
+    margin-top: 3.2rem;
+    background-color: #ddd;
+
+    &-name {
+      font-size: 1.6rem;
+      color: $secondary-dark-color;
+      font-weight: 600;
+    }
+    &-text {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $secondary-dark-color;
+    }
+  }
+}
